@@ -1,10 +1,14 @@
 package almacen;
 import java.util.Arrays;
 
-// Tabla dos zonas: zona ocupada y zona libre Con un contador que indica cual es la última posición libre, 
-//o el número de elementos almacenados. Podemos añadir siempre al final de la zona ocupada 
-//o insertar en orden para mantener siempre la tabla ordenada. Cuando eliminamos un elemento desplazamos 
-//para que no haya huecos.
+/**
+ * Contiene dos zonas: zona ocupada y zona libre con un contador que indica cual es 
+ * la última posicion libre o el numero de elementos almacenados. Podemos añadir siempre al final de 
+ * la zona ocupada o insertar en orden para mantener siempre la tabla cordinada. Cuando eliminamos
+ * un elemento desplazamos para que no haya huecos
+ * @author Samuel
+ * @author Andres
+ */
 
 public class Almacen2 {
 
@@ -13,18 +17,27 @@ public class Almacen2 {
 	private int tvalores[];
 	private int valoresAlmacenados;
 
-	// Constructores sin parámetros creo una tabla de 10 elementos
+	/**
+	 * Constructor que crea una tabla de 10 elementos
+	 */
+	
 	public Almacen2() {
-		this(10); // Llamo al constructor con parámetros
+		this(10); 
 	}
-
-	// Constructor donde se fija tamaño máximo del Almacén
+	
+	/**
+	 * Constructor donde se fija tamaño máximo del Almacén
+	 */
+	
 	public Almacen2(int tamaño) {
 		tvalores = new int[tamaño];
 		init();
 	}
-
-	// Pone todas las posiciones a LIBRES
+	
+	/**
+	 * Método que pone todas las posiciones a LIBRES
+	 */
+	
 	public void init() {
 		for (int i = 0; i < tvalores.length; i++) {
 			tvalores[i] = Almacen2.LIBRE;
@@ -32,22 +45,39 @@ public class Almacen2 {
 		valoresAlmacenados = 0;
 	}
 
-	// Muestra una cadena con los valores de la tabla
+	/**
+	 * Método que genera una cadena con los valores de la tabla
+	 * @return devuelve la cadena con los valores de la tabla
+	 */
+	
 	public String toString() {
 		return "Almacen1 [tvalores=" + Arrays.toString(tvalores) + ", valoresAlmacenados=" + valoresAlmacenados + "]";
 	}
-
-	// Devuelve el números de posiciones libres
+	
+	/**
+	 * Método que devuelve el número de posiciones libres
+	 * @return devuelve el número de posiciones libres
+	 */
+	
 	public int numPosicionesLibres() {
 		return this.tvalores.length - this.valoresAlmacenados;
 	}
-
-	// Devuelve el número de posiones ocupadas
+	
+	/**
+	 * Metodo que devuelve el número de posiones ocupadas
+	 * @return devuelve el número de posiciones ocupadas
+	 */
+	
 	public int numPosicionesOcupadas() {
 		return this.valoresAlmacenados;
 	}
-
-	// Devuelve verdadero o falso si está almacenado el valor en la tabla
+	
+	/**
+	 * Metodo que devuelve verdadero o falsi si está almacenado el parámetro en la tabla
+	 * @param num - número a buscar en la tabla
+	 * @return devuelve true o false si está almacenado
+	 */
+	
 	public boolean estaValor(int num) {
 		for (int i = 0; i < this.valoresAlmacenados; i++) {
 			if (this.tvalores[i] == num) {
@@ -57,7 +87,12 @@ public class Almacen2 {
 		return false;
 	}
 
-	// Almacena el valor el la tabla, devuelve false sin no puede almacenarlo
+	/**
+	 * Método que almacena el valor el la tabla, devuelve false si no puede almacenarlo
+	 * @param num - número a almacenar en la tabla
+	 * @return devuelve false si no puede almacenarlo
+	 */
+
 	public boolean ponValor(int num) {
 		if(this.tvalores.length != this.valoresAlmacenados) {
 			this.tvalores[this.valoresAlmacenados] = num;
@@ -67,7 +102,12 @@ public class Almacen2 {
 		return false;
 	}
 
-	// Elimina el elemento de la tabla, si no esta devuelve false
+	/**
+	 * Método que elimina el elemento de la tabla
+	 * @param num - numero a eliminar de la tabla
+	 * @return devuelve false si no está en la tabla
+	 */
+	 
 	public boolean sacarValor(int num) {
 		boolean esta = false;
 		for (int j = 0; j < this.valoresAlmacenados; j++) {
@@ -89,7 +129,11 @@ public class Almacen2 {
 		return esta;
 	}
 
-	// Indica si el almacén esta lleno
+	/**
+	 * Método que indica si el almacén esta lleno
+	 * @return devuelve true o false según esté lleno o no
+	 */
+	
 	public boolean estaLleno() {
 		return this.valoresAlmacenados == this.tvalores.length;
 	}

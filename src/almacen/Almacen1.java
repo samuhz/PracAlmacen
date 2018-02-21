@@ -1,29 +1,41 @@
 package almacen;
 import java.util.Arrays;
 
-/*
- * Implementar un almacén de enteros mediante una tabla de huecos
- * se supone que no puede contener el valor 0 ya que indica posiciones libre.
+/**
+ * Se implementa un almacén de enteros mediante una tabla de huecos que
+ * se supone que no puede contener el valor 0 ya que indica posiciones libre
+ * @author Andres
+ * @author Samuel
  */
+
 public class Almacen1 {
 
 	static private final int LIBRE = 0;
-	// Array con los valores almacenados
 	private int tvalores[];
 	private int valoresAlmacenados = 0;
-
-	// Constructores sin parámetros creo una tabla de 10 elementos
+	
+	/**
+	 * Constructor que crea una tabla de 10 elementos
+	 */
+	
 	public Almacen1() {
-		this(10); // Llamo al constructor con parámetros
+		this(10); 
 	}
 
-	// Constructor donde se fija tamaño máximo del Almacén
+	/**
+	 * Constructor donde se fija el tamaño maximo del almacén
+	 * @param tamaño - representa el tamaño
+	 */
+ 
 	public Almacen1(int tamaño) {
 		tvalores = new int[tamaño];
 		init();
 	}
 
-	// Pone todas las posiciones a LIBRES
+	/**
+	 * Método que sirve para asignar a todas las posiciones LIBRE
+	 */
+	
 	public void init() {
 		for (int i = 0; i < tvalores.length; i++) {
 			tvalores[i] = Almacen1.LIBRE;
@@ -31,23 +43,40 @@ public class Almacen1 {
 		valoresAlmacenados = 0;
 	}
 
-	// Muestra una cadena con los valores de la tabla
+	/**
+	 * Método que muestra una cadena con los valores de la tabla
+	 * @return devuelve los valores que hay en la tabla
+	 */
+	
 	public String toString() {
 		return "Almacen1 [tvalores=" + Arrays.toString(tvalores) + ", valoresAlmacenados=" + valoresAlmacenados + "]";
 	}
 
-	// Devuelve el números de posiciones libres
+	/**
+	 * Método que devuelve el numero de posiciones libres
+	 * @return  retorna el número de posiciones libres
+	 */
+	 
 	public int numPosicionesLibres() {
 
 		return this.tvalores.length - this.valoresAlmacenados;
 	}
 
-	// Devuelve el número de posiones ocupadas
+	/**
+	 * Método que devuelve el numero de posiciones ocupadas
+	 * @return retorna el numero de posiciones ocupadas
+	 */
+	 
 	public int numPosicionesOcupadas() {
 		return this.valoresAlmacenados;
 	}
 
-	// Devuelve verdadero o falso si está almacenado el valor en la tabla
+	/**
+	 * Método que devuelve verdadero o falso si esta almacenado el valor en la tabla
+	 * @param num - valor a buscar en la tabla
+	 * @return retorna verdadero o falso
+	 */
+	 
 	public boolean estaValor(int num) {
 		for (int i = 0; i < this.tvalores.length; i++) {
 			if (this.tvalores[i] == num) {
@@ -57,7 +86,12 @@ public class Almacen1 {
 		return false;
 	}
 
-	// Almacena el valor el la tabla, devuelve false sin no puede almacenarlo
+	/**
+	 * Método que almacena el valor en la tabla, devuelve false si no puede almacenarlo
+	 * @param num - valor a almacenar
+	 * @return devuelve false si no puede almacenarlo
+	 */
+	 
 	public boolean ponValor(int num) {
 		for (int i = 0; i < this.tvalores.length; i++) {
 			if (this.tvalores[i] == LIBRE) {
@@ -70,7 +104,12 @@ public class Almacen1 {
 		return false;
 	}
 
-	// Elimina el elemento de la tabla, si no esta devuelve false
+	/**
+	 * Método que elimina el elemento de la tabla, si no está devuelve false
+	 * @param num - valor a eliminar de la tabla
+	 * @return retorna false si no está
+	 */
+	 
 	public boolean sacarValor(int num) {
 		for (int j = 0; j <= this.tvalores.length; j++) {
 			if (this.tvalores[j] == num) {
@@ -81,8 +120,12 @@ public class Almacen1 {
 		}
 		return false;
 	}
-
-	// Indica si el almacén esta lleno
+	
+	 /**
+	  * Método quye indica si el almacén está lleno
+	  * @return devuelve verdadero si el almacen está lleno
+	  */
+	
 	public boolean estaLleno() {
 		for (int s = 0; s <= this.tvalores.length; s++) {
 			if (this.tvalores[s] == LIBRE) {

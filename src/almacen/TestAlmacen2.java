@@ -3,19 +3,19 @@ package almacen;
 import java.util.Scanner;
 
 /**
- * Clase de prueba de Almacen1
+ * Clase de prueba de Almacen2
  * @author Samuel
  * @author Andres
  */
 
-public class TestAlmacen1 {
+public class TestAlmacen2 {
 	
 	/**
-	 * Método main, ejecuta los métodos de Almacen1
+	 * Método main, ejecuta los métodos de Almacen2
 	 */
 	static public void main(String[] argv) {
 
-		Almacen1 prueba = new Almacen1();
+		Almacen2 prueba = new Almacen2();
 		Scanner sc = new Scanner(System.in);
 		int opcion;
 		
@@ -29,7 +29,7 @@ public class TestAlmacen1 {
 		sc.close();
 
 	}
-
+	
 	/**
 	 * Método mostrarMenu que imprime por pantalla las diferentes opciones a elegir
 	 */
@@ -53,8 +53,7 @@ public class TestAlmacen1 {
 	 * @param Scanner sc - parámetro que sirve para leer los valores
 	 */
 	
-	static void procesarOpcion(int opcion, Almacen1 parAlmacen, Scanner sc) {
-  
+	static void procesarOpcion(int opcion, Almacen2 parAlmacen, Scanner sc) {
 		switch (opcion) {
 		case 1:
 			System.out.println("Contenido del almacén " + parAlmacen.toString());
