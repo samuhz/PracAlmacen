@@ -27,6 +27,7 @@ public class Almacen1 {
 
 	/**
 	 * Constructor donde se fija el tamaño maximo del almacén
+	 
 	 * @param tamaño - representa el tamaño
 	 */
  
