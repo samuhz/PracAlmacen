@@ -2,7 +2,7 @@ package almacen;
 import java.util.Arrays;
 
 /**
- * Se implementa un almac�n de enteros mediante una tabla de huecos que
+ * Se implementa un almacén de enteros mediante una tabla de huecos que
  * se supone que no puede contener el valor 0 ya que indica posiciones libre
  * @author Andres
  * @author Samuel
@@ -15,6 +15,7 @@ public class Almacen1 {
 	private int valoresAlmacenados = 0;
 	private String ojetemoreno = "1";
 	private String alegoria = "sadf";
+	private int asdf = 1;
 	
 	/**
 	 * Constructor que crea una tabla de 10 elementos
@@ -25,17 +26,17 @@ public class Almacen1 {
 	}
 
 	/**
-	 * Constructor donde se fija el tama�o maximo del almac�n
-	 * @param tama�o - representa el tama�o
+	 * Constructor donde se fija el tamaño maximo del almacén
+	 * @param tamaño - representa el tamaño
 	 */
  
-	public Almacen1(int tama�o) {
-		tvalores = new int[tama�o];
+	public Almacen1(int tamaño) {
+		tvalores = new int[tamaño];
 		init();
 	}
 
 	/**
-	 * M�todo que sirve para asignar a todas las posiciones LIBRE
+	 * Método que sirve para asignar a todas las posiciones LIBRE
 	 */
 	
 	public void init() {
@@ -46,7 +47,7 @@ public class Almacen1 {
 	}
 
 	/**
-	 * M�todo que muestra una cadena con los valores de la tabla
+	 * Método que muestra una cadena con los valores de la tabla
 	 * @return devuelve los valores que hay en la tabla
 	 */
 	
@@ -55,8 +56,8 @@ public class Almacen1 {
 	}
 
 	/**
-	 * M�todo que devuelve el numero de posiciones libres
-	 * @return  retorna el n�mero de posiciones libres
+	 * Método que devuelve el numero de posiciones libres
+	 * @return  retorna el número de posiciones libres
 	 */
 	 
 	public int numPosicionesLibres() {
@@ -65,7 +66,7 @@ public class Almacen1 {
 	}
 
 	/**
-	 * M�todo que devuelve el numero de posiciones ocupadas
+	 * Método que devuelve el numero de posiciones ocupadas
 	 * @return retorna el numero de posiciones ocupadas
 	 */
 	 
@@ -74,7 +75,7 @@ public class Almacen1 {
 	}
 
 	/**
-	 * M�todo que devuelve verdadero o falso si esta almacenado el valor en la tabla
+	 * Método que devuelve verdadero o falso si esta almacenado el valor en la tabla
 	 * @param num - valor a buscar en la tabla
 	 * @return retorna verdadero o falso
 	 */
@@ -89,7 +90,7 @@ public class Almacen1 {
 	}
 
 	/**
-	 * M�todo que almacena el valor en la tabla, devuelve false si no puede almacenarlo
+	 * Método que almacena el valor en la tabla, devuelve false si no puede almacenarlo
 	 * @param num - valor a almacenar
 	 * @return devuelve false si no puede almacenarlo
 	 */
@@ -107,9 +108,9 @@ public class Almacen1 {
 	}
 
 	/**
-	 * M�todo que elimina el elemento de la tabla, si no est� devuelve false
+	 * Método que elimina el elemento de la tabla, si no está devuelve false
 	 * @param num - valor a eliminar de la tabla
-	 * @return retorna false si no est�
+	 * @return retorna false si no está
 	 */
 	 
 	public boolean sacarValor(int num) {
@@ -124,8 +125,8 @@ public class Almacen1 {
 	}
 	
 	 /**
-	  * M�todo quye indica si el almac�n est� lleno
-	  * @return devuelve verdadero si el almacen est� lleno
+	  * Método quye indica si el almacén está lleno
+	  * @return devuelve verdadero si el almacen está lleno
 	  */
 	
 	public boolean estaLleno() {
