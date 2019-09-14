@@ -13,6 +13,7 @@ public class Almacen1 {
 	static private final int LIBRE = 0;
 	private int tvalores[];
 	private int valoresAlmacenados = 0;
+	private String alegoria = "sadf";
 	
 	/**
 	 * Constructor que crea una tabla de 10 elementos
